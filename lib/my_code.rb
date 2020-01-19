@@ -1,5 +1,5 @@
 # Your Code Here
-arr = [1,2,3,4]
+arr = [1,2,3]
 def map(source_array)
   result =[]
   source_array.each do |element|
@@ -8,8 +8,10 @@ def map(source_array)
   result
 end
 def reduce(source_array,starting_point=0)
-  result = 0
   source_array.each do |element|
-    result =
+    starting_point = yield(element,starting_point)
   end
+  starting_point ? starting_point : false
 end
+
+pp reduce(arr){|element,starting_point| pp element+starting_point}
