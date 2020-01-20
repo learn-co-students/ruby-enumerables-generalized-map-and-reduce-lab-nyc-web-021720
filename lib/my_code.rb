@@ -13,5 +13,3 @@ def reduce(source_array,starting_point=0)
   end
   starting_point ? starting_point : false
 end
-
-pp reduce(arr){|element,starting_point| pp element+starting_point}
