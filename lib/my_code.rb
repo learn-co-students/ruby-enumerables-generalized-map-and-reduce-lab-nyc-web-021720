@@ -17,11 +17,10 @@ def reduce(array, sv=nil) # make it nil so that it's totally optional and will w
     sum = array[0] #set sum to= first element of the array like as if sv wasn't there
     i = 1 # already starting with 0 so need to set counter to 1 to move on to the next one
   end
-
 #now we loop over our array to return the sum of these values
   while i < array.size
     sum = yield(sum, array[i])
-    i += 1 # we want to send num1 and each element of the array into the block
+    i += 1 # we want to send sum and each element of the array into the block
   end
   sum
 end
