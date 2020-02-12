@@ -1,25 +1,25 @@
-# Your Code Here
-def map(array)
-  new = []
+def map(arr)
   i = 0 
-  while i < array.length 
-  new.push (yield(array[i]))
-  i += 1 
-end 
-new 
+  a = []
+   while i < arr.length 
+   a << yield(arr[i])
+   i += 1
+end
+a
 end
 
-def reduce(array, sv = nil)
-  if sv 
-    sum = sv 
+
+def reduce(array, optional = nil)
+  if optional
+    sum = optional
     i = 0 
   else 
     sum = array[0]
     i = 1 
   end
-  while i < array.length
-  sum = yield(sum,array[i])
-  i += 1 
+    while i < array.length
+  sum = yield(sum, array[i])
+    i += 1
 end
-sum
-  end
+sum 
+end
